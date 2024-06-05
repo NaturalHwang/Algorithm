@@ -10,12 +10,8 @@ public class Main {
         for(int i = 0; i < 5; i++){
             menu[i] = sc.nextInt();
         }
-        minBurger = menu[0];
-        for(int j = 1; j < 3; j++){
-            if(minBurger > menu[j]) minBurger = menu[j];
-        }
-        if(menu[3] < menu[4]) minBev = menu[3];
-        else minBev = menu[4];
+        minBurger = Math.min(menu[0], Math.min(menu[1],menu[2]));
+        minBev = Math.min(menu[3], menu[4]);
 
         System.out.println(minBurger + minBev - 50);
     }
