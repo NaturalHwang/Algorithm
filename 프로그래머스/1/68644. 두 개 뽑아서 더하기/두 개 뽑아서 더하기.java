@@ -1,17 +1,17 @@
 import java.util.*;
 class Solution {
     public int[] solution(int[] numbers) {
-        List<Integer>answerList = new ArrayList<>();
-        for(int i = 0; i < numbers.length; i++){
+        Set<Integer> set = new TreeSet<>();
+        for(int i = 0; i<numbers.length; i++){
             for(int j = i+1; j < numbers.length; j++){
-                if(answerList.contains(numbers[i]+numbers[j])) continue;
-                else answerList.add(numbers[i]+numbers[j]);
+                set.add(numbers[i]+numbers[j]);
             }
         }
-        Collections.sort(answerList);
-        int []answer = new int[answerList.size()];
-        for(int i = 0; i<answer.length; i++){
-            answer[i] = answerList.get(i);
+        int answer[] = new int[set.size()];
+        int count = 0;
+        for(int n: set){
+            answer[count] = n;
+            count++;
         }
         return answer;
     }
