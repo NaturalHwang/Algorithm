@@ -18,7 +18,7 @@ public class Main {
         int end = 0;
         int total = 0;
 
-        while(start < n && end <= n) {
+        while(start <= n && end <= n) {
             if(total >= s && min > end - start) min = end - start;
 
             if(total < s) total += nums[end++];
